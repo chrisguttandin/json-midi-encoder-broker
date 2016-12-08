@@ -1,7 +1,7 @@
 export const load = (url: string) => {
     const worker = new Worker(url);
 
-    const encode = (json) => {
+    const encode = (json): Promise<ArrayBuffer> => {
         return new Promise((resolve, reject) => {
             const onMessage = ({ data }: any = {}) => {
                 worker.removeEventListener('message', onMessage);

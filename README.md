@@ -1,5 +1,7 @@
 # json-midi-encoder-broker
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/chrisguttandin/json-midi-encoder-broker.svg)](https://greenkeeper.io/)
+
 **The broker which is used by the json-midi-encoder package.**
 
 [![tests](https://img.shields.io/travis/chrisguttandin/json-midi-encoder-broker/master.svg?style=flat-square)](https://travis-ci.org/chrisguttandin/json-midi-encoder-broker)

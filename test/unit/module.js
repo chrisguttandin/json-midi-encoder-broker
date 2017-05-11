@@ -17,7 +17,20 @@ describe('module', () => {
                 constructor (url) {
                     super(url);
 
+                    const addEventListener = this.addEventListener;
+
+                    // This is an ugly hack to prevent the broker from handling mirrored events.
+                    this.addEventListener = (index, ...args) => {
+                        if (typeof index === 'number') {
+                            return addEventListener.apply(this, args);
+                        }
+                    };
+
                     instances.push(this);
+                }
+
+                static addEventListener (index, ...args) {
+                    return instances[index].addEventListener(index, ...args);
                 }
 
                 static get instances () {
@@ -42,22 +55,26 @@ describe('module', () => {
 
     describe('encode()', () => {
 
-        let json;
+        let midiFile;
 
         beforeEach(() => {
-            json = [ { some: 'JSON' }, 'data' ];
+            midiFile = [ { some: 'JSON' }, 'data' ];
         });
 
         it('should send the correct message', (done) => {
-            Worker.instances[0].addEventListener('message', ({ data }) => {
+            Worker.addEventListener(0, 'message', ({ data }) => {
+                expect(data.id).to.be.a('number');
+
                 expect(data).to.deep.equal({
-                    json
+                    id: data.id,
+                    method: 'encode',
+                    params: { midiFile }
                 });
 
                 done();
             });
 
-            jsonMidiEncoder.encode(json);
+            jsonMidiEncoder.encode(midiFile);
         });
 
     });

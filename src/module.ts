@@ -13,7 +13,7 @@ const generateUniqueId = (set: Set<number>) => {
     return id;
 };
 
-export const load = (url: string) => {
+export const load = (url: string): { encode: (midiFile: IMidiFile) => Promise<ArrayBuffer> } => {
     const worker = new Worker(url);
 
     const ongoingRecordingRequests: Set<number> = new Set();

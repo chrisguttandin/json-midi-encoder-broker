@@ -1,4 +1,4 @@
-import { IEncodeRequest, IWorkerEvent } from 'json-midi-encoder-worker';
+import { IEncodeRequest, IEncodeResponse, IWorkerEvent } from 'json-midi-encoder-worker';
 import { IMidiFile } from 'midi-json-parser-worker';
 
 const MAX_SAFE_INTEGER = Number.MAX_SAFE_INTEGER || Math.pow(2, 53) - 1;
@@ -31,7 +31,7 @@ export const load = (url: string) => {
                     worker.removeEventListener('message', onMessage);
 
                     if (data.error === null) {
-                        resolve(data.result.arrayBuffer);
+                        resolve((<IEncodeResponse> data).result.arrayBuffer);
                     } else {
                         reject(new Error(data.error.message));
                     }

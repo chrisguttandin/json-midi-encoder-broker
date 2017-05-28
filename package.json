@@ -4,7 +4,7 @@
     "url": "https://github.com/chrisguttandin/json-midi-encoder-broker/issues"
   },
   "dependencies": {
-    "json-midi-encoder-worker": "^2.0.2",
+    "json-midi-encoder-worker": "^2.0.3",
     "midi-json-parser-worker": "^2.0.2"
   },
   "description": "The broker which is used by the json-midi-encoder package.",

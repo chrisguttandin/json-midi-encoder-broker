@@ -5,7 +5,7 @@
   },
   "dependencies": {
     "json-midi-encoder-worker": "^2.0.3",
-    "midi-json-parser-worker": "^2.0.2"
+    "midi-json-parser-worker": "^2.1.1"
   },
   "description": "The broker which is used by the json-midi-encoder package.",
   "devDependencies": {

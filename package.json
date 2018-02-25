@@ -6,8 +6,8 @@
   "dependencies": {
     "babel-runtime": "^6.26.0",
     "fast-unique-numbers": "^1.1.3",
-    "json-midi-encoder-worker": "^2.1.13",
-    "midi-json-parser-worker": "^4.0.9",
+    "json-midi-encoder-worker": "^2.1.14",
+    "midi-json-parser-worker": "^4.0.10",
     "tslib": "^1.9.0"
   },
   "description": "The broker which is used by the json-midi-encoder package.",
@@ -38,9 +38,9 @@
     "karma-webpack": "^2.0.9",
     "load-grunt-config": "^0.19.2",
     "mocha": "^5.0.1",
-    "rollup": "^0.56.2",
+    "rollup": "^0.56.3",
     "rollup-plugin-babel": "^3.0.3",
-    "sinon": "^4.4.1",
+    "sinon": "^4.4.2",
     "sinon-chai": "^2.14.0",
     "ts-loader": "^3.5.0",
     "tsconfig-holy-grail": "^4.0.0",
@@ -70,5 +70,5 @@
     "test": "grunt lint && grunt test"
   },
   "types": "build/es2015/module.d.ts",
-  "version": "2.0.37"
+  "version": "2.0.38"
 }

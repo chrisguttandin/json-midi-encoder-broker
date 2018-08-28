@@ -49,8 +49,11 @@ describe('module', () => {
                 self.postMessage(data);
             });`
         ], { type: 'application/javascript' });
+        const url = URL.createObjectURL(blob);
 
-        jsonMidiEncoder = load(URL.createObjectURL(blob));
+        jsonMidiEncoder = load(url);
+
+        URL.revokeObjectURL(url);
     });
 
     describe('encode()', () => {

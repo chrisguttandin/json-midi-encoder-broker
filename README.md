@@ -4,4 +4,4 @@
 
 [![tests](https://img.shields.io/travis/chrisguttandin/json-midi-encoder-broker/master.svg?style=flat-square)](https://travis-ci.org/chrisguttandin/json-midi-encoder-broker)
 [![dependencies](https://img.shields.io/david/chrisguttandin/json-midi-encoder-broker.svg?style=flat-square)](https://www.npmjs.com/package/json-midi-encoder-broker)
-[![version](https://img.shields.io/npm/v/json-midi-encoder-broker.svg?style=flat-square)](https://www.npmjs.com/package/json-midi-encoder-broker)
+[![version](https://img.shields.io/npm/v/json-midi-encoder-broker.svg?style=flat-square)](https://www.npmjs.com/package/json-midi-encoder-broker) [![Greenkeeper badge](https://badges.greenkeeper.io/chrisguttandin/json-midi-encoder-broker.svg)](https://greenkeeper.io/)

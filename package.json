@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.6.3",
-    "fast-unique-numbers": "^4.0.9",
+    "fast-unique-numbers": "^4.0.10",
     "json-midi-encoder-worker": "^4.4.5",
     "midi-json-parser-worker": "^6.5.4",
     "tslib": "^1.10.0"

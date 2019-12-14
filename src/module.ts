@@ -2,8 +2,6 @@ import { addUniqueNumber } from 'fast-unique-numbers';
 import { IEncodeRequest, IEncodeResponse, IWorkerEvent } from 'json-midi-encoder-worker';
 import { IMidiFile } from 'midi-json-parser-worker';
 
-export { IMidiFile };
-
 export const load = (url: string) => {
     const worker = new Worker(url);
 

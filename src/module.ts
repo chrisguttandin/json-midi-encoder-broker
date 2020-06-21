@@ -18,7 +18,7 @@ export const load = (url: string) => {
                     worker.removeEventListener('message', onMessage);
 
                     if (data.error === null) {
-                        resolve((<IEncodeResponse> data).result.arrayBuffer);
+                        resolve((<IEncodeResponse>data).result.arrayBuffer);
                     } else {
                         reject(new Error(data.error.message));
                     }
@@ -27,7 +27,7 @@ export const load = (url: string) => {
 
             worker.addEventListener('message', onMessage);
 
-            worker.postMessage(<IEncodeRequest> { id, method: 'encode', params: { midiFile } });
+            worker.postMessage(<IEncodeRequest>{ id, method: 'encode', params: { midiFile } });
         });
     };
 

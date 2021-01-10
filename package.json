@@ -13,7 +13,7 @@
         "fast-unique-numbers": "^5.0.21",
         "json-midi-encoder-worker": "^6.0.19",
         "midi-json-parser-worker": "^8.0.18",
-        "tslib": "^2.0.3"
+        "tslib": "^2.1.0"
     },
     "description": "The broker which is used by the json-midi-encoder package.",
     "devDependencies": {

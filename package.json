@@ -12,7 +12,7 @@
         "@babel/runtime": "^7.12.13",
         "fast-unique-numbers": "^5.0.23",
         "json-midi-encoder-worker": "^6.0.21",
-        "midi-json-parser-worker": "^8.0.19",
+        "midi-json-parser-worker": "^8.0.20",
         "tslib": "^2.1.0"
     },
     "description": "The broker which is used by the json-midi-encoder package.",

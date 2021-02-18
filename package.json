@@ -11,7 +11,7 @@
     "dependencies": {
         "@babel/runtime": "^7.12.18",
         "fast-unique-numbers": "^5.0.24",
-        "json-midi-encoder-worker": "^6.0.21",
+        "json-midi-encoder-worker": "^6.0.22",
         "midi-json-parser-worker": "^8.0.20",
         "tslib": "^2.1.0"
     },

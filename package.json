@@ -9,7 +9,7 @@
         }
     },
     "dependencies": {
-        "@babel/runtime": "^7.16.3",
+        "@babel/runtime": "^7.16.5",
         "fast-unique-numbers": "^6.0.9",
         "json-midi-encoder-worker": "^6.0.47",
         "midi-json-parser-worker": "^8.0.45",

@@ -1,37 +1,23 @@
-import { addUniqueNumber } from 'fast-unique-numbers';
-import { IEncodeRequest, IEncodeResponse, IWorkerEvent } from 'json-midi-encoder-worker';
-import { IMidiFile } from 'midi-json-parser-worker';
+import { createBroker } from 'broker-factory';
+import { TJsonMidiEncoderWorkerDefinition } from 'json-midi-encoder-worker';
+import { IJsonMidiEncoderBrokerDefinition } from './interfaces';
+import { TJsonMidiEncoderBrokerLoader, TJsonMidiEncoderBrokerWrapper } from './types';
 
-export const load = (url: string) => {
+/*
+ * @todo Explicitly referencing the barrel file seems to be necessary when enabling the
+ * isolatedModules compiler option.
+ */
+export * from './interfaces/index';
+export * from './types/index';
+
+export const wrap: TJsonMidiEncoderBrokerWrapper = createBroker<IJsonMidiEncoderBrokerDefinition, TJsonMidiEncoderWorkerDefinition>({
+    encode: ({ call }) => {
+        return (midiFile) => call('encode', { midiFile });
+    }
+});
+
+export const load: TJsonMidiEncoderBrokerLoader = (url: string) => {
     const worker = new Worker(url);
 
-    const ongoingRecordingRequests: Set<number> = new Set();
-
-    const encode = (midiFile: IMidiFile): Promise<ArrayBuffer> => {
-        return new Promise((resolve, reject) => {
-            const id = addUniqueNumber(ongoingRecordingRequests);
-
-            const onMessage = ({ data }: IWorkerEvent) => {
-                if (data.id === id) {
-                    ongoingRecordingRequests.delete(id);
-
-                    worker.removeEventListener('message', onMessage);
-
-                    if (data.error === null) {
-                        resolve((<IEncodeResponse>data).result.arrayBuffer);
-                    } else {
-                        reject(new Error(data.error.message));
-                    }
-                }
-            };
-
-            worker.addEventListener('message', onMessage);
-
-            worker.postMessage(<IEncodeRequest>{ id, method: 'encode', params: { midiFile } });
-        });
-    };
-
-    return {
-        encode
-    };
+    return wrap(worker);
 };

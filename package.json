@@ -9,7 +9,7 @@
         }
     },
     "dependencies": {
-        "@babel/runtime": "^7.26.0",
+        "@babel/runtime": "^7.26.7",
         "broker-factory": "^3.0.109",
         "json-midi-encoder-worker": "^7.0.0",
         "midi-json-parser-worker": "^8.1.52",
